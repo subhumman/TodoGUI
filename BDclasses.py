@@ -4,9 +4,6 @@ import tkinter as tk
 
 
 '''
-Этот класс вяляет собой прототип для последующих. Он будет унаследован остальными и методы этого класса, описаные обстрактно через декоратор 
-abstractmethod. Эта хуйня требует, чтобы каждый из абстрактных методов имел реализацию в дочерних классах. Это что то вроде виртуальной функции из плюсов.
-Также нельзя создать экземпляр класса внутри которого абстрактные методы
 '''
 #абстрактный класс -- интерфейс
 class IDbase(ABC):
@@ -68,11 +65,6 @@ class DBmanager(IDbase):
 class Win:
     def __init__(self, todo_list: DBmanager, size: tuple[int, int], bg_color: str = "#FFFFFF"):
         """
-        Initialize the window with todo list manager
-        Args:
-            todo_list: Database manager instance
-            size: Window size as (width, height)
-            bg_color: Background color in hex format
         """
         self.window = tk.Tk()
         self.todo_list = todo_list
@@ -92,7 +84,6 @@ class Win:
         self.create_input_widgets()
         
     def create_widgets(self):
-        """Create and initialize all widgets"""
         # Title label
         self.title_label = tk.Label(
             self.main_frame,
@@ -196,7 +187,7 @@ class Win:
             self.window.after(2000, error_label.destroy)
         
     def update_tasks(self):
-        """Update the tasks display"""
+        """Обновление окна обнов"""
         try:
             # Clear current items
             self.tasks_listbox.delete(0, tk.END)
@@ -213,12 +204,7 @@ class Win:
             
     def add_task(self, title: str, description: str = "") -> bool:
         """
-        Add a new task
-        Args:
-            title: Task title
-            description: Task description
-        Returns:
-            bool: True if task was added successfully
+            добавление новое задачи
         """
         try:
             if self.todo_list.add_task(title, description):
@@ -230,11 +216,11 @@ class Win:
             return False
             
     def show(self):
-        """Show the window and start the main loop"""
+        """показывать окно"""
         self.window.mainloop()
         
     def __del__(self):
-        """Cleanup when the window is destroyed"""
+        """деструктор"""
         try:
             self.window.destroy()
         except:
