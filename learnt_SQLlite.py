@@ -1,8 +1,6 @@
 import tkinter as tk
 from BDclasses import DBmanager, Win
 
-# пандас - это библиотека для работы с данными и их типами(также она позволяет менять расширения и формат файлов)
-
 def main():
     # Создаем менеджер базы данных
     db = DBmanager("TodoList.db")
