@@ -1,5 +1,4 @@
-# Todo List GUI (Python + Tkinter + SQLite)
-
+# Todo List GUI
 ## About the Project
 
 This pet project is a simple yet stylish task manager with a graphical interface built in Python. It was created to practice GUI development (Tkinter) and working with databases (SQLite), as well as to demonstrate clean code and a user-friendly UX.
@@ -25,12 +24,5 @@ This pet project is a simple yet stylish task manager with a graphical interface
 
 ## Tech Stack
 - Python 3.10+
-- Tkinter (standard library)
-- SQLite3 (standard library)
-
-## Screenshot
-> _Add your interface screenshot here_
-
-## Contacts
-- [Telegram](https://t.me/TildasSkinPeeler)
----
+- Tkinter
+- SQLite3
